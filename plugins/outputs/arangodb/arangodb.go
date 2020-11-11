@@ -75,7 +75,7 @@ func (a *ArangoDb) Connect() error {
 	exists, err := c.DatabaseExists(nil, a.Database)
 
 	if err != nil {
-		a.Log.Errorf("Could not check if database exists: %v", err)
+		a.Log.Errorf("Could not check if database '%v' exists: %v", a.Database, err)
 		return err
 	}
 
